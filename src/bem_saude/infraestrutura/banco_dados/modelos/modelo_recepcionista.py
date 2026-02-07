@@ -1,0 +1,23 @@
+"""
+
+Modelo ORM para a tabela de recepcionistas.
+
+Mapeia a entidade Recepcionista para a tabela 'recepcionistas' no PostgreSQL.
+
+"""
+from sqlalchemy import Column
+from bem_saude.infraestrutura.banco_dados.modelos.modelo_base import ModeloBase
+from sqlalchemy.dialects.postgresql import UUID
+
+class ModeloRecepcionista(ModeloBase):
+    __tablename__= "recepcionistas"
+
+    id = Column(
+        UUID(as_uuid=True),
+        primary_key=True,
+        nullable=False
+    )
+
+    nome = Column(String(45), nullable=False)
+    status = Column(String(10), nullable=False)
+
