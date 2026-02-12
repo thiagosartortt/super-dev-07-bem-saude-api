@@ -6,11 +6,11 @@ Gerencia o engine do SQLAlchemy e a factory de sessões.
 
 """
 
-import locale
+import logging
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
 
-from bem_saude.api.configuracoes import Configuracoes
+from bem_saude.api.configuracoes import configuracoes
 
 logger = logging.getLogger(__name__)
 
@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 #
 
 engine = create_engine(
-    Configuracoes.DATABASE_URL,
+    configuracoes.DATABASE_URL,
     echo=False,
     pool_pre_ping=True, # Validar conexões antes de usar
     pool_size=5, # Numero de conexões no pool

@@ -5,7 +5,7 @@ Modelo ORM para a tabela de recepcionistas.
 Mapeia a entidade Recepcionista para a tabela 'recepcionistas' no PostgreSQL.
 
 """
-from sqlalchemy import Column
+from sqlalchemy import Column, String
 from bem_saude.infraestrutura.banco_dados.modelos.modelo_base import ModeloBase
 from sqlalchemy.dialects.postgresql import UUID
 
